@@ -4,6 +4,7 @@ import { validateLayers, sumComponents, type InventoryLayer, type LayerWithdrawa
 import { assessProductQuality, type ProductQuality } from './quality.ts';
 import type { ProductBatch } from './blending.ts';
 export type Withdrawal = { id: string; amountMol: number; minimumHydrogenFraction: number; preferredLayerIds?: string[] };
+export type { InventoryLayer } from './layers.ts';
 export type WithdrawalResult = { remainingLayers: InventoryLayer[]; products: ProductBatch[]; reports: Array<{ id: string; withdrawals: LayerWithdrawal[]; quality: ProductQuality }> };
 
 export function withdrawFromLayers(inputLayers: InventoryLayer[], withdrawals: Withdrawal[]): WithdrawalResult {

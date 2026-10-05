@@ -3,6 +3,7 @@ import { priorityBands, requiredMinimumFlow } from './priority-policy.ts';
 import { applyRampBounds } from './ramp.ts';
 import { validateRequests, type FacilityRequest } from './request.ts';
 export type FacilityAllocation = FacilityRequest & { allocatedMolPerSecond: number; curtailedMolPerSecond: number; disposition: 'served' | 'minimum-curtailed' | 'capacity-curtailed' };
+export type { FacilityRequest } from './request.ts';
 
 function weightedWaterFill(band: FacilityRequest[], capacity: number, minimumsFit: boolean): Map<string, number> {
   const allocated = new Map(band.map((item) => [item.cavernId, minimumsFit ? Math.min(item.minimumMolPerSecond, item.requestedMolPerSecond) : 0]));
