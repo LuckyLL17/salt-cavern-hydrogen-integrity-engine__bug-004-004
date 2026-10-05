@@ -1,0 +1,12 @@
+{
+  "name": "salt-cavern-hydrogen-integrity-engine",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "本机可运行的盐穴储氢注采仿真与完整性评估后端",
+  "scripts": {
+    "start": "node --experimental-strip-types src/http/server.ts",
+    "test": "node --experimental-strip-types --test test/*.test.ts"
+  },
+  "engines": { "node": ">=22.12" }
+}
